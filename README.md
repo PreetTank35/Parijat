@@ -79,6 +79,19 @@ npm run dev:web
 npm run dev
 ```
 
+### Deploying to Vercel
+
+The root `vercel.json` configures the Vite web app and Express API as services in
+one Vercel project. The web service handles `/`; `/api/*` is routed to the API.
+The API entrypoint is `apps/api/src/app.ts`, which exports the Express app
+without starting the local development listener.
+
+The Prisma schema currently uses SQLite for local development. Vercel's
+serverless filesystem is not a durable database, so configure a hosted database
+and update the Prisma provider/schema before relying on persistent API data in
+production. Set the required production environment variables in the Vercel
+project settings; do not use the development secrets from `.env.example`.
+
 ---
 
 ## 👨‍🌾 4. Pre-Seeded Demo Farmer Accounts (1-Click Login)
