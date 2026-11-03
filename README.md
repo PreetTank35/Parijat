@@ -84,7 +84,9 @@ npm run dev
 The root `vercel.json` configures the Vite web app and Express API as services in
 one Vercel project. The web service handles `/`; `/api/*` is routed to the API.
 The API entrypoint is `apps/api/src/app.ts`, which exports the Express app
-without starting the local development listener.
+without starting the local development listener. The API build generates
+Prisma Client from its schema before running TypeScript, so deployment builds
+do not depend on package-install lifecycle scripts.
 
 The Prisma schema currently uses SQLite for local development. Vercel's
 serverless filesystem is not a durable database, so configure a hosted database
