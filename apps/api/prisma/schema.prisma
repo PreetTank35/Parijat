@@ -1,0 +1,408 @@
+// ============================================
+// PARIJAT — Prisma Schema (SQLite for local dev)
+// ============================================
+// Switch provider to "postgresql" and update DATABASE_URL for production.
+// All models are designed for PostgreSQL compatibility.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ── Users & Authentication ────────────────────
+
+model User {
+  id                String   @id @default(uuid())
+  phone             String   @unique
+  name              String?
+  preferredLanguage String   @default("mr") // mr | hi | en
+  isVerified        Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  // Relations
+  sessions              UserSession[]
+  farmerProfile         FarmerProfile?
+  equipmentListings     EquipmentListing[]
+  bookingsAsRenter      EquipmentBooking[]   @relation("BookingsAsRenter")
+  reviewsGiven          Review[]             @relation("ReviewsGiven")
+  reviewsReceived       Review[]             @relation("ReviewsReceived")
+  statusChanges         BookingStatusHistory[]
+  sentMessages          Message[]
+  notifications         Notification[]
+  groupPurchaseEntries  GroupPurchaseParticipant[]
+  conversationsAsUser1  Conversation[]       @relation("ConversationUser1")
+  conversationsAsUser2  Conversation[]       @relation("ConversationUser2")
+
+  @@index([phone])
+}
+
+model UserSession {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([token])
+  @@index([userId])
+}
+
+model FarmerProfile {
+  id              String  @id @default(uuid())
+  userId          String  @unique
+  villageId       String?
+  landAcreage     Float?
+  primaryCrops    String? // JSON array of crop codes
+  isEquipmentOwner Boolean @default(false)
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  village Village? @relation(fields: [villageId], references: [id])
+
+  @@index([villageId])
+}
+
+// ── Geography ─────────────────────────────────
+
+model Village {
+  id        String @id @default(uuid())
+  nameEn    String
+  nameMr    String
+  nameHi    String
+  taluka    String
+  district  String
+  state     String
+  pincode   String
+  latitude  Float
+  longitude Float
+
+  farmerProfiles    FarmerProfile[]
+  equipmentListings EquipmentListing[]
+  groupPurchases    GroupPurchaseRequest[]
+
+  @@index([district])
+  @@index([latitude, longitude])
+}
+
+// ── Equipment ─────────────────────────────────
+
+model EquipmentCategory {
+  id      String @id @default(uuid())
+  code    String @unique // TRACTOR, ROTAVATOR, etc.
+  nameEn  String
+  nameMr  String
+  nameHi  String
+  iconUrl String?
+  emoji   String @default("🔧")
+
+  listings EquipmentListing[]
+}
+
+model EquipmentListing {
+  id              String   @id @default(uuid())
+  ownerId         String
+  categoryId      String
+  villageId       String
+  titleEn         String
+  titleMr         String?
+  titleHi         String?
+  description     String?
+  rentalRate      Float
+  rentalUnit      String   @default("DAILY") // HOURLY | DAILY
+  securityDeposit Float?
+  status          String   @default("ACTIVE") // ACTIVE | PAUSED | ARCHIVED
+  latitude        Float?
+  longitude       Float?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  owner    User              @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  category EquipmentCategory @relation(fields: [categoryId], references: [id])
+  village  Village           @relation(fields: [villageId], references: [id])
+
+  images        EquipmentImage[]
+  availability  EquipmentAvailability[]
+  bookings      EquipmentBooking[]
+  reviews       Review[]
+  conversations Conversation[]
+
+  @@index([ownerId])
+  @@index([categoryId])
+  @@index([villageId])
+  @@index([status])
+  @@index([latitude, longitude])
+}
+
+model EquipmentImage {
+  id        String  @id @default(uuid())
+  listingId String
+  url       String
+  isPrimary Boolean @default(false)
+  sortOrder Int     @default(0)
+
+  listing EquipmentListing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@index([listingId])
+}
+
+model EquipmentAvailability {
+  id        String @id @default(uuid())
+  listingId String
+  startDate DateTime
+  endDate   DateTime
+  status    String @default("AVAILABLE") // AVAILABLE | BLOCKED | BOOKED
+
+  listing EquipmentListing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@index([listingId])
+  @@index([startDate, endDate])
+}
+
+// ── Bookings ──────────────────────────────────
+
+model EquipmentBooking {
+  id            String   @id @default(uuid())
+  bookingNumber String   @unique
+  listingId     String
+  renterId      String
+  startDate     DateTime
+  endDate       DateTime
+  totalUnits    Int
+  totalAmount   Float
+  status        String   @default("REQUESTED") // REQUESTED | ACCEPTED | REJECTED | CANCELLED | COMPLETED
+  paymentStatus String   @default("PENDING")   // PENDING | PAID_MOCK | REFUNDED
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  listing       EquipmentListing      @relation(fields: [listingId], references: [id])
+  renter        User                  @relation("BookingsAsRenter", fields: [renterId], references: [id])
+  statusHistory BookingStatusHistory[]
+  reviews       Review[]
+
+  @@index([listingId])
+  @@index([renterId])
+  @@index([status])
+  @@index([startDate, endDate])
+}
+
+model BookingStatusHistory {
+  id          String   @id @default(uuid())
+  bookingId   String
+  fromStatus  String?
+  toStatus    String
+  changedById String
+  reason      String?
+  timestamp   DateTime @default(now())
+
+  booking   EquipmentBooking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  changedBy User             @relation(fields: [changedById], references: [id])
+
+  @@index([bookingId])
+}
+
+model Review {
+  id         String   @id @default(uuid())
+  bookingId  String
+  reviewerId String
+  revieweeId String
+  listingId  String
+  rating     Int      // 1-5
+  comment    String?
+  createdAt  DateTime @default(now())
+
+  booking  EquipmentBooking @relation(fields: [bookingId], references: [id])
+  reviewer User             @relation("ReviewsGiven", fields: [reviewerId], references: [id])
+  reviewee User             @relation("ReviewsReceived", fields: [revieweeId], references: [id])
+  listing  EquipmentListing @relation(fields: [listingId], references: [id])
+
+  @@unique([bookingId, reviewerId])
+  @@index([listingId])
+}
+
+// ── Messaging ─────────────────────────────────
+
+model Conversation {
+  id             String   @id @default(uuid())
+  participant1Id String
+  participant2Id String
+  listingId      String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  participant1 User              @relation("ConversationUser1", fields: [participant1Id], references: [id])
+  participant2 User              @relation("ConversationUser2", fields: [participant2Id], references: [id])
+  listing      EquipmentListing? @relation(fields: [listingId], references: [id])
+  messages     Message[]
+
+  @@unique([participant1Id, participant2Id, listingId])
+  @@index([participant1Id])
+  @@index([participant2Id])
+}
+
+model Message {
+  id             String   @id @default(uuid())
+  conversationId String
+  senderId       String
+  text           String
+  isRead         Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User         @relation(fields: [senderId], references: [id])
+
+  @@index([conversationId])
+  @@index([senderId])
+}
+
+// ── Crop Prices ───────────────────────────────
+
+model Crop {
+  id       String @id @default(uuid())
+  code     String @unique
+  nameEn   String
+  nameMr   String
+  nameHi   String
+  imageUrl String?
+  emoji    String @default("🌿")
+  category String // CEREAL | PULSE | OILSEED | VEGETABLE | FRUIT | CASH_CROP | SPICE
+
+  priceObservations MarketPriceObservation[]
+
+  @@index([code])
+}
+
+model Market {
+  id        String @id @default(uuid())
+  nameEn    String
+  nameMr    String
+  nameHi    String
+  district  String
+  state     String
+  latitude  Float
+  longitude Float
+
+  priceObservations MarketPriceObservation[]
+
+  @@index([district])
+}
+
+model MarketPriceObservation {
+  id         String   @id @default(uuid())
+  cropId     String
+  marketId   String
+  date       DateTime
+  minPrice   Float
+  maxPrice   Float
+  modalPrice Float
+  unit       String   @default("QUINTAL")
+  sourceName String   @default("Demo Seed Data")
+  isVerified Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  crop   Crop   @relation(fields: [cropId], references: [id])
+  market Market @relation(fields: [marketId], references: [id])
+
+  @@index([cropId, marketId])
+  @@index([date])
+}
+
+// ── Farm Inputs & Group Purchasing ────────────
+
+model Supplier {
+  id           String  @id @default(uuid())
+  name         String
+  contactPhone String?
+  village      String?
+  district     String?
+  rating       Float?
+  verified     Boolean @default(false)
+
+  products FarmInputProduct[]
+}
+
+model FarmInputProduct {
+  id         String  @id @default(uuid())
+  supplierId String
+  category   String  // SEEDS | FERTILIZERS | PESTICIDES | TOOLS
+  nameEn     String
+  nameMr     String
+  nameHi     String
+  packSize   String
+  price      Float
+  mrp        Float?
+  imageUrl   String?
+  inStock    Boolean @default(true)
+  createdAt  DateTime @default(now())
+
+  supplier       Supplier              @relation(fields: [supplierId], references: [id])
+  groupPurchases GroupPurchaseRequest[]
+
+  @@index([supplierId])
+  @@index([category])
+}
+
+model GroupPurchaseRequest {
+  id              String   @id @default(uuid())
+  productId       String
+  villageId       String
+  targetQuantity  Float
+  currentQuantity Float    @default(0)
+  unit            String
+  targetDate      DateTime
+  discountPercent Float?
+  status          String   @default("OPEN") // OPEN | TARGET_MET | ORDERED | DELIVERED | CANCELLED
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  product      FarmInputProduct          @relation(fields: [productId], references: [id])
+  village      Village                   @relation(fields: [villageId], references: [id])
+  participants GroupPurchaseParticipant[]
+
+  @@index([productId])
+  @@index([villageId])
+  @@index([status])
+}
+
+model GroupPurchaseParticipant {
+  id              String   @id @default(uuid())
+  groupPurchaseId String
+  userId          String
+  quantity        Float
+  pledgedAt       DateTime @default(now())
+
+  groupPurchase GroupPurchaseRequest @relation(fields: [groupPurchaseId], references: [id], onDelete: Cascade)
+  user          User                @relation(fields: [userId], references: [id])
+
+  @@unique([groupPurchaseId, userId])
+}
+
+// ── Notifications ─────────────────────────────
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  titleEn   String
+  titleMr   String?
+  titleHi   String?
+  messageEn String
+  messageMr String?
+  messageHi String?
+  type      String   // BOOKING_REQUESTED | BOOKING_ACCEPTED | etc.
+  isRead    Boolean  @default(false)
+  linkUrl   String?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([isRead])
+}

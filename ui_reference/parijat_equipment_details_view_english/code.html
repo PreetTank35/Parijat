@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Parijat - Farmer Marketplace</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#d7e6da", "surface-container-high": "#ddece0", "outline-variant": "#bfc9bf", "on-tertiary": "#ffffff", "surface-tint": "#186c44", "surface": "#eefdf1", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdf97", "surface-container": "#e3f2e6", "on-tertiary-container": "#ffd366", "surface-bright": "#eefdf1", "on-surface-variant": "#3f4942", "secondary-fixed-dim": "#91d798", "on-secondary-container": "#2f713d", "secondary-container": "#acf3b2", "primary": "#00512f", "on-secondary-fixed": "#002109", "surface-container-low": "#e8f7eb", "surface-container-highest": "#d7e6da", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-background": "#121e17", "background": "#eefdf1", "on-secondary-fixed-variant": "#095222", "tertiary-fixed-dim": "#ecc156", "on-primary-container": "#99e9b6", "inverse-surface": "#26332b", "primary-container": "#176b43", "on-tertiary-fixed": "#251a00", "secondary": "#296b38", "on-primary": "#ffffff", "surface-dim": "#cfded2", "tertiary": "#594300", "on-primary-fixed-variant": "#005230", "tertiary-container": "#765a00", "on-tertiary-fixed-variant": "#5a4400", "on-surface": "#121e17", "error-container": "#ffdad6", "primary-fixed": "#a4f4c1", "secondary-fixed": "#acf3b2", "on-error-container": "#93000a", "primary-fixed-dim": "#88d7a6", "inverse-on-surface": "#e5f5e8", "on-primary-fixed": "#002110", "outline": "#6f7a71", "inverse-primary": "#88d7a6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "space-xs": "0.375rem", "space-md": "1rem", "space-xl": "2.25rem", "space-lg": "1.5rem", "margin-tablet": "2rem", "gutter-tablet": "1.5rem", "margin-desktop": "3rem", "space-sm": "0.75rem", "gutter": "1rem", "gutter-desktop": "2rem" }, "fontFamily": { "headline-md": ["Noto Sans"], "headline-lg": ["Noto Sans"], "body-xl": ["Noto Sans"], "headline-xl-mobile": ["Noto Sans"], "label-md": ["Noto Sans"], "body-lg": ["Noto Sans"], "headline-xl": ["Noto Sans"], "body-md": ["Noto Sans"], "label-lg": ["Noto Sans"], "label-xl": ["Noto Sans"], "headline-lg-mobile": ["Noto Sans"] }, "fontSize": { "headline-md": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}], "body-xl": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-xl-mobile": ["26px", {"lineHeight": "34px", "fontWeight": "700"}], "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}], "headline-xl": ["32px", {"lineHeight": "42px", "fontWeight": "700"}], "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}], "label-lg": ["16px", {"lineHeight": "22px", "fontWeight": "600"}], "label-xl": ["18px", {"lineHeight": "24px", "fontWeight": "700"}], "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased pb-24 md:pb-0 min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_2px_8px_rgba(38,51,43,0.06)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm shrink-0"><img alt="Parijat Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XxKc_CEFncKR_3QPcuxTLx2wMkfl-8hBTFJUu-rzcww6x--3UI_8hp5OWmJo5zifYCFQAVtp7Yb67o8squ6da7RjIVeK9PKY9rKM4NGKYmkvi8kuN7jJVbA_ZimPsULUet26Jn1FVTNIS0fA7LTS65RlR1gNdBMDXHpLS_c-8aKxz-vP5xFq7hQStXRw1tJJwcS-R03h9hV7Sr6f7GO0IxL19h2wAnllLZVKPEK4RPH5yieODj5OnwQ5tg"/><div class="hidden sm:flex flex-col"><span class="font-headline-md text-headline-md text-primary tracking-tight leading-none">Parijat</span><span class="font-label-md text-label-md text-secondary leading-tight">Farmer Market</span></div><button class="flex items-center gap-1.5 px-3 py-2 bg-surface-container rounded-full text-on-surface hover:bg-surface-variant transition-colors min-h-[44px]" type="button"><span class="material-symbols-outlined text-primary text-xl">location_on</span><div class="flex flex-col text-left"><span class="font-label-md text-label-md leading-none font-bold">Baramati, Pune</span><span class="font-label-md text-label-md text-on-surface-variant hidden lg:inline leading-none">Change</span></div><span class="material-symbols-outlined text-outline text-lg">expand_more</span></button></div><div class="hidden lg:flex items-center bg-surface-container-low p-1 rounded-full"><button class="px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors min-h-[38px]" type="button">मराठी</button><button class="px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors min-h-[38px]" type="button">हिन्दी</button><button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm min-h-[38px]" type="button">English</button></div><div class="flex items-center gap-space-sm shrink-0"><button class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-tertiary-fixed text-on-tertiary-fixed rounded-full hover:bg-tertiary-fixed-dim transition-all shadow-sm min-h-[48px]" type="button"><span class="material-symbols-outlined text-xl text-tertiary">volume_up</span><span class="font-label-lg text-label-lg hidden sm:inline text-on-tertiary-fixed">Audio Help</span></button><div class="flex items-center gap-2 pl-1"><div class="hidden xl:flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Dnyaneshwar Patil</span><span class="font-label-md text-label-md text-secondary leading-none">Verified Farmer</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-secondary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPKWdGz2c_Eao2YL1ASfvi50r3yiDAT3j0-wvScpooJUoO1gfQNrd3_kASFeBTPnCAHAD01VdiwuFzSoGtHsiMJ4kj_kVXYmRqyN_uaO4Emg63d7iRwAKEhCHN0y3Hn0xbeBbAPihUrZzDvkcvDkpSUhND5f-2-SXWzwJ6QPW3wjAvPFChgTwmFdFTE03HkTXkRNWnlI75p7fudi_glD1gLxwoh0cSxK-iG-9yUIXaJMeN5Kf-OmLYJQ"/></div></div></div><div class="hidden md:block bg-surface-container-low"><div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"><nav class="flex items-center gap-1 py-1.5 overflow-x-auto" data-active-classes="bg-primary-container text-on-primary rounded-lg shadow-sm font-semibold"><a class="px-4 py-2 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg whitespace-nowrap" data-path="home" href="#">Home</a><a aria-current="page" class="px-4 py-2 transition-colors whitespace-nowrap bg-primary-container text-on-primary rounded-lg shadow-sm font-semibold" data-path="rent-machinery" href="#">Rent Equipment</a><a class="px-4 py-2 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg whitespace-nowrap" data-path="list-my-machine" href="#">List Equipment</a><a class="px-4 py-2 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg whitespace-nowrap" data-path="crop-mandi-rates" href="#">Mandi Rates</a><a class="px-4 py-2 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg whitespace-nowrap" data-path="my-bookings" href="#">My Bookings</a><a class="px-4 py-2 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg whitespace-nowrap" data-path="help-audio-guide" href="#">Help</a></nav></div></div></header><main class="w-full pt-20 md:pt-[128px] bg-background min-h-[calc(100vh-280px)]"><div class="flex flex-col w-full">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-md w-full">
+<!-- 1. Top Breadcrumb & Quick Actions -->
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-lg text-label-lg transition-colors group shadow-sm" href="#">
+<span class="material-symbols-outlined text-primary group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span>&lt; Back to All Equipment</span>
+</a>
+<!-- Quick Audio Pill for Whole Screen -->
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-all shadow-sm" id="mainAudioBtn" type="button">
+<span class="material-symbols-outlined text-tertiary animate-pulse">volume_up</span>
+<span class="font-label-lg text-label-lg font-bold">Listen to Details</span>
+</button>
+</div>
+<!-- Main Visual & Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-gutter-desktop items-start">
+<!-- LEFT COLUMN: Image Gallery & Visual Trust Marks (lg: 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Hero Equipment Photo Card -->
+<div class="relative w-full rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest">
+<div class="relative aspect-[4/3] w-full">
+<img class="w-full h-full object-cover" data-alt="A clean, vibrant red Mahindra 575 DI tractor standing in a lush green Maharashtra sugarcane field under soft morning sunlight, equipped with a high-grade rotavator attachment, realistic farm background, rich deep viridian and earth tone palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrVx-a10vSM5qZPs14PXoiZnp5pdsVfMawXPmZX_tyRZeq1ukyta2kQ5F9IDJPQLvlkh4aR8QYXP0JXakBjS7By4Sx8OXAjsB7AO0xfDzJRhNGSCXKx1Ituq8mbGa_wR3HrWtByIhmjmuH18A3wIlbcWSRGQTH9nDt3JCJRJthdnvZ5oPulQMFqQSxyYoEBNxNvrePrWX67RFDg2FYH9aTMXpX8GFcBGbXPThrZoie61jwfigq3r-XQg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+<!-- Parijat Verified Badge -->
+<div class="absolute top-4 left-4 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-primary shadow-md font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-bold text-on-surface">Parijat Verified Machine</span>
+</div>
+<!-- Floating Distance Pill -->
+<div class="absolute bottom-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface shadow font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-base">near_me</span>
+<span>2.5 km distance</span>
+</div>
+<!-- Image Index Counter -->
+<div class="absolute bottom-4 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-black/60 text-white font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+<span>1 / 4</span>
+</div>
+</div>
+<!-- Thumbnail Strip -->
+<div class="p-3 bg-surface-container-low flex items-center gap-2 overflow-x-auto">
+<div class="w-20 h-16 rounded-xl overflow-hidden ring-2 ring-primary shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close-up of Mahindra 575 DI tractor engine and red hood in sunlight, clean agriculture setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ1U7A7aSpaQCzwG0FodiSYiVmUl9XdKB_aZaLj80ZDASj0AVNgIhVxUMfevQwIoxPjVvdvfjXRrzJJaFDnXVWIJ1vMwwoNbILEyo5ZhBB5HlkNtvVq2YNmxsyMURWK3X1EPHKcCzoyslEA6uryq5me89H3CmUrhA0dbOvyPU6V0ANquX0q3c3i-wpo75VERJZLDe7JSZMx4kGnDGIz_O8a6WeO-qu3ccjS1PxjEybBSPNAY-gkURD_w"/>
+</div>
+<div class="w-20 h-16 rounded-xl overflow-hidden shrink-0 opacity-80 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Rotavator attachment connected to red tractor on fertile black cotton soil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxtvq6QPnX4yBVirfNc2ghk3gbEOHIKRkBXPXYBaHFDbRPhOZl7BsNpaqpNiD25oJNVdyfOg18XWC3em0OfOBccgb4VNa17CzTgjsFkFw0y50Dd489ZuyLGQugA_6FI5ek0WwMVm9vR4_W7grK3uGkK9GiSRqf4NDZOvmmozsQBYm2XajySeGXivObIG1QNjnfOufdgA6IiTo41sShbTs_nukpZKJfXKssoxi_G2RO2g6UF6YeV1ZAVw"/>
+</div>
+<div class="w-20 h-16 rounded-xl overflow-hidden shrink-0 opacity-80 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Tractor cabin steering wheel with clean farm field visible in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6WkJaOm3VElhBTtw-MmsS_B9nW4LfeDUiSwrrq4PrtGTyllqwmnFHJkcmF-sUUO-wn3PZ5dFIrfGerAZF78C-CkoRKj6olI2SiH_Vw3zSiIeM1Xgovqo4Mw9wHhf5rzwNSiOnu0CZaeq9VCmkxccDTELYkslYqrup7Gmo7HctTm2mulgEaorwJhBkIYn7rqLkR8DdQELBVkmj3zRQSS_cgc9I2FnXGFlWIC0-PzQHY3Mt2jAe68LaZw"/>
+</div>
+<div class="w-20 h-16 rounded-xl overflow-hidden shrink-0 opacity-80 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Field cultivator blade attachment resting on Maharashtra soil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh2MWPihTZXpPc4UmnK5wjZgpe2iV2m8Rn35Tp9oV3YYALtkWYky0xKFdvUlinrpIb0cTOPQg4nnq2MAjM7YgFq7NaFETs05EYDrG3YoNQRhIiEWhJi6au_g8f8cyqD2wmJx0wZPh7nLps5g2dpfkxcpVZQPEjTOnF4P2sT2ZGPRIYl4lo5W1EUzNMTN1iY2RuWITvMD6Tw_FGEPEkaWtOTUiiFB6zdlewr5fEM1hNI1AvPUSl1WTAyw"/>
+</div>
+</div>
+</div>
+<!-- Vernacular Audio Player Bar -->
+<div class="p-4 rounded-xl bg-surface-container-high shadow-sm flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow">
+<span class="material-symbols-outlined text-2xl">mic</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold">Audio Walkthrough</p>
+<p class="font-body-md text-body-md text-on-surface-variant">How this machine works, implements &amp; rates (1:12 mins)</p>
+</div>
+</div>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow hover:opacity-90 shrink-0" type="button">
+<span class="material-symbols-outlined">play_arrow</span>
+<span>Play</span>
+</button>
+</div>
+<!-- Suitable Crops & Works (Visual Icons) -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3">
+<h3 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">handyman</span>
+            Best Suited For:
+          </h3>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
+<div class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">agriculture</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Deep Ploughing</span>
+<span class="text-xs text-on-surface-variant">Hard Soil Tillage</span>
+</div>
+<div class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">cyclone</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Rotary Tiller</span>
+<span class="text-xs text-on-surface-variant">Rotavator Work</span>
+</div>
+<div class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">grain</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Seedbed Prep</span>
+<span class="text-xs text-on-surface-variant">Pre-sowing Bed</span>
+</div>
+<div class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">local_shipping</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Haulage Work</span>
+<span class="text-xs text-on-surface-variant">Trolley Transport</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Information Blocks, Rates, Owner & Booking (lg: 5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Title & Primary Details Card -->
+<div class="p-space-md md:p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold">
+              45 HP Power
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md">
+              Model: 2022
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Mahindra 575 DI Tractor
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Equipped with rotavator and 5-tine cultivator attachments. Excellent fuel efficiency and ideal for tilling black soil.
+          </p>
+<!-- BLOCK 1: Rental Rate Card (High Contrast) -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5 mt-2">
+<span class="font-label-md text-label-md text-secondary font-semibold uppercase tracking-wider">
+              Price &amp; Rental Rate
+            </span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">₹700</span>
+<span class="font-headline-md text-headline-md text-on-surface">/ hour</span>
+</div>
+<div class="inline-flex items-center gap-1.5 text-on-surface font-body-md text-body-md pt-1">
+<span class="material-symbols-outlined text-tertiary text-lg">local_gas_station</span>
+<span class="font-semibold">or ₹3,500 / day</span>
+<span class="text-on-surface-variant text-xs">(incl. fuel / diesel)</span>
+</div>
+</div>
+<!-- BLOCK 2: Immediate Availability -->
+<div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">event_available</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Availability Status</p>
+<p class="font-headline-md text-headline-md text-primary font-bold">Available Today &amp; Tomorrow</p>
+</div>
+</div>
+<!-- BLOCK 3: Farm Location -->
+<div class="flex items-start gap-3 p-3.5 rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-xl text-primary">location_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Location &amp; Distance</span>
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Village: Vadgaon Nimbalkar, Baramati</span>
+<span class="font-body-md text-body-md text-secondary">2.5 km from your farm (~10 mins)</span>
+</div>
+</div>
+<!-- BLOCK 4: Driver / Operator Support -->
+<div class="flex items-center gap-3 p-3.5 rounded-xl bg-secondary-container/40">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">person_check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-secondary-container font-bold">Driver Included</span>
+<span class="font-body-md text-body-md text-on-surface">Experienced operator provided at no extra cost</span>
+</div>
+</div>
+</div>
+<!-- BLOCK 5: Verified Equipment Owner Card -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Equipment Owner</span>
+<span class="inline-flex items-center gap-1 text-xs px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface font-semibold">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+              Aadhaar &amp; Bank Verified
+            </span>
+</div>
+<div class="flex items-center gap-3.5">
+<img class="w-14 h-14 rounded-full object-cover ring-2 ring-primary" data-alt="Warm portrait of a smiling Indian farmer Tukaram Jadhav wearing traditional white Gandhi cap, clean crisp outdoors, confident agricultural owner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV9NNpoQvOBAwxEXYFdTLe5_Sd_tEH6V9-JvqQQjezDSuUyOCF4vp9sdDSx8nOnLC9Wq3f9HwOHvY5TUwFMFpkmLP7r71MpMZCnYoLg8JUwfQLNFUMilFkfCzNrneMB34L3IyKme1HGCnGJebih0QdzXv6Lv9E5yzjPAoC0QRN82w67pFlQleg1F2mihruw7ErqVHFGMZ4RHDBQ_u1FT8LgZxSV6-HslRm8C3jfbc1ejscwcdJUYappw"/>
+<div class="flex flex-col">
+<h4 class="font-headline-md text-headline-md text-on-surface font-bold">Tukaram Jadhav</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Farmer &amp; Machine Operator • Vadgaon Nimbalkar</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="inline-flex items-center text-tertiary font-bold text-label-md">
+                  ★ 4.9
+                </span>
+<span class="text-xs text-on-surface-variant">• 34 successful bookings</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Real Farmer Reviews Pill List Section -->
+<div class="mt-space-lg p-space-md md:p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">rate_review</span>
+            Experience &amp; Reviews from Nearby Farmers
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Verified feedback from farmers in the Baramati area</p>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9 / 5</span>
+<span class="text-on-surface-variant">(28 reviews)</span>
+</div>
+</div>
+<!-- Reviews Grid / Horizontal Stack -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Review 1 -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3 shadow-xs">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic">
+            “Excellent tractor, operator arrived right on time. The rotavator work in my onion field was extremely fine and thorough.”
+          </p>
+<div class="flex items-center justify-between text-xs text-on-surface-variant pt-1 border-t border-surface-variant/40">
+<span class="font-bold text-on-surface">Balasaheb Shinde</span>
+<span>Nira Road, 2 days ago</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3 shadow-xs">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic">
+            “The diesel consumption and hourly accounting were fully transparent. Tukaram is very cooperative and easy to work with.”
+          </p>
+<div class="flex items-center justify-between text-xs text-on-surface-variant pt-1 border-t border-surface-variant/40">
+<span class="font-bold text-on-surface">Ganesh Bankar</span>
+<span>Supa, 5 days ago</span>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3 shadow-xs">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic">
+            “The 45 HP engine is very powerful. Deep ploughing went effortlessly even in tough, stony soil.”
+          </p>
+<div class="flex items-center justify-between text-xs text-on-surface-variant pt-1 border-t border-surface-variant/40">
+<span class="font-bold text-on-surface">Mahadev Jagtap</span>
+<span>Morgaon, 1 week ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Safe Booking Guarantee strip -->
+<div class="mt-space-md p-4 rounded-xl bg-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">shield_person</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold">Parijat Security Guarantee</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Payment released only after satisfactory job completion.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="text-xs bg-surface-container-lowest px-3 py-1.5 rounded-full font-bold text-secondary">100% Secure Transaction</span>
+</div>
+</div>
+</div>
+<!-- 5. Bottom Persistent Action Bar (High affordance, ergonomic, vernacular) -->
+<aside aria-label="Quick Actions" class="sticky bottom-0 z-40 w-full bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-6px_20px_rgba(38,51,43,0.12)]">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-3">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+<!-- Price recap (mobile hidden, desktop show) -->
+<div class="hidden sm:flex flex-col">
+<span class="font-headline-lg text-headline-lg text-primary font-bold leading-tight">₹700 <span class="font-body-md text-body-md font-normal text-on-surface">/ hr</span></span>
+<span class="font-label-md text-label-md text-secondary">With driver • Immediate availability</span>
+</div>
+<!-- Action Button Cluster -->
+<div class="w-full sm:w-auto flex items-center justify-end gap-2.5 sm:gap-4">
+<!-- Audio Guide Quick Button -->
+<button class="flex flex-col items-center justify-center w-14 h-14 rounded-full bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim shrink-0 shadow transition-transform active:scale-95" onclick="triggerAudioHelp()" type="button">
+<span class="material-symbols-outlined text-2xl">volume_up</span>
+<span class="font-label-md text-[11px] font-bold leading-none mt-0.5">Audio Help</span>
+</button>
+<!-- Secondary Button: Call Owner -->
+<a class="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 sm:px-6 h-14 rounded-full bg-surface-container-lowest text-primary ring-2 ring-primary hover:bg-surface-container transition-all font-label-xl text-label-xl active:scale-98" href="tel:9822012345">
+<span class="material-symbols-outlined text-2xl text-primary">call</span>
+<span class="font-bold whitespace-nowrap">Call Owner</span>
+</a>
+<!-- Primary Button: Book Equipment Now -->
+<button class="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 sm:px-8 h-14 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-xl text-label-xl shadow-md transition-all active:scale-98" id="bookNowBtn" onclick="openBookingModal()" type="button">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+<span class="font-bold whitespace-nowrap">Book Now</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Interactive Modal for Immediate Booking Confirmation -->
+<div class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4" id="bookingModal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-t-3xl sm:rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-md animate-in slide-in-from-bottom duration-200">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-lg text-headline-lg text-primary font-bold">Confirm Booking Details</h3>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="closeBookingModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">agriculture</span>
+<div>
+<p class="font-label-lg text-label-lg font-bold text-on-surface">Mahindra 575 DI (Rotavator)</p>
+<p class="font-body-md text-body-md text-secondary">Rate: ₹700 / hour (Driver included)</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold">Select Start Date:</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-lg">today</span>
+            Today (Immediate)
+          </button>
+<button class="p-3 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-lg">event</span>
+            Tomorrow Morning
+          </button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold">Estimated Farm Area (Acres):</label>
+<div class="relative flex items-center">
+<input class="w-full h-14 px-4 rounded-xl bg-surface-container text-on-surface text-lg font-bold outline-none focus:ring-2 focus:ring-primary" type="number" value="2"/>
+<span class="absolute right-4 font-label-lg text-label-lg text-on-surface-variant font-bold">Acres</span>
+</div>
+</div>
+<button class="w-full h-14 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-xl text-label-xl font-bold shadow-md flex items-center justify-center gap-2 mt-2" onclick="confirmSuccess()" type="button">
+<span class="material-symbols-outlined">send</span>
+<span>Send Booking Request (Free)</span>
+</button>
+<p class="text-xs text-center text-on-surface-variant">Owner Tukaram Jadhav will be notified immediately via SMS and phone call.</p>
+</div>
+</div>
+</div>
+<script>
+  function openBookingModal() {
+    const modal = document.getElementById('bookingModal');
+    if (modal) {
+      modal.classList.remove('hidden');
+    }
+  }
+
+  function closeBookingModal() {
+    const modal = document.getElementById('bookingModal');
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function confirmSuccess() {
+    closeBookingModal();
+    alert('Your booking request has been sent to Tukaram Jadhav! He will call you within 10 minutes.');
+  }
+
+  function triggerAudioHelp() {
+    if ('speechSynthesis' in window) {
+      const msg = new SpeechSynthesisUtterance('Mahindra 575 DI tractor, 45 HP. Rent ₹700 per hour with driver included at Vadgaon Nimbalkar.');
+      msg.lang = 'en-IN';
+      window.speechSynthesis.speak(msg);
+    } else {
+      alert('Audio Walkthrough: Mahindra 575 DI tractor, ₹700 per hour, driver included at Vadgaon Nimbalkar.');
+    }
+  }
+
+  // Bind Main Audio Header Button
+  const mainAudioBtn = document.getElementById('mainAudioBtn');
+  if (mainAudioBtn) {
+    mainAudioBtn.addEventListener('click', triggerAudioHelp);
+  }
+</script></main><footer class="w-full bg-surface-container-low text-on-surface mt-space-xl shadow-[0_-2px_12px_rgba(38,51,43,0.04)]"><div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg"><div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md shadow-sm mb-space-lg"><div class="flex items-center gap-space-md"><div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-2xl">support_agent</span></div><div><h3 class="font-headline-md text-headline-md text-primary">Toll-Free Farmer Helpline</h3><p class="font-body-md text-body-md text-on-surface-variant">Agricultural advice, equipment assistance &amp; technical guidance 24x7</p></div></div><a class="flex items-center justify-center gap-2 w-full md:w-auto px-space-lg py-3 rounded-full bg-primary-container text-on-primary font-label-xl text-label-xl shadow-sm hover:opacity-95 transition-all min-h-[56px]" href="tel:18002335500"><span class="material-symbols-outlined">phone_in_talk</span>1800-233-5500 (Toll Free)</a></div><div class="flex flex-col sm:flex-row items-center justify-between text-on-surface-variant gap-space-sm pt-space-sm font-label-md text-label-md"><p>© 2024 Parijat Kisan Agritech. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="text-secondary font-semibold">Rural Development &amp; Farmer Empowerment Initiative</span></div></div></div></footer><div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(38,51,43,0.08)]"><nav class="flex items-center justify-around px-2 py-2" data-active-classes="text-primary font-bold"><a class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-on-surface min-h-[48px] w-14" data-path="home" href="#"><span class="material-symbols-outlined text-2xl">home</span><span class="font-label-md text-label-md text-[11px] leading-tight">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center py-1 min-h-[48px] w-14 text-primary font-bold" data-path="rent-machinery" href="#"><span class="material-symbols-outlined text-2xl">agriculture</span><span class="font-label-md text-label-md text-[11px] leading-tight">Rent</span></a><a class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-on-surface min-h-[48px] w-14" data-path="list-my-machine" href="#"><span class="material-symbols-outlined text-2xl">add_circle</span><span class="font-label-md text-label-md text-[11px] leading-tight">List</span></a><a class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-on-surface min-h-[48px] w-14" data-path="crop-mandi-rates" href="#"><span class="material-symbols-outlined text-2xl">trending_up</span><span class="font-label-md text-label-md text-[11px] leading-tight">Mandi</span></a><a class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-on-surface min-h-[48px] w-14" data-path="my-bookings" href="#"><span class="material-symbols-outlined text-2xl">event_note</span><span class="font-label-md text-label-md text-[11px] leading-tight">Bookings</span></a></nav></div></body></html>
